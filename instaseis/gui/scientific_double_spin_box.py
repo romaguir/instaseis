@@ -4,6 +4,7 @@
 Originally from https://gist.github.com/jdreaver/0be2e44981159d0854f5
 """
 from PySide2 import QtGui
+from PySide2 import QtWidgets
 import numpy as np
 import re
 
@@ -32,7 +33,7 @@ class FloatValidator(QtGui.QValidator):
         return match.groups()[0] if match else ""
 
 
-class ScientificDoubleSpinBox(QtGui.QDoubleSpinBox):
+class ScientificDoubleSpinBox(QtWidgets.QDoubleSpinBox):
     def __init__(self, *args, **kwargs):
         super(ScientificDoubleSpinBox, self).__init__(*args, **kwargs)
         self.setMinimum(-np.inf)

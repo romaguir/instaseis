@@ -1,0 +1,708 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'qt_window.ui'
+##
+## Created by: Qt User Interface Compiler version 5.15.8
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide2.QtCore import *  # type: ignore
+from PySide2.QtGui import *  # type: ignore
+from PySide2.QtWidgets import *  # type: ignore
+
+from pyqtgraph import PlotWidget
+from instaseis.gui.qt4mplcanvas import Qt4MplCanvas
+from instaseis.gui.scientific_double_spin_box import ScientificDoubleSpinBox
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.setEnabled(True)
+        MainWindow.resize(1350, 755)
+        MainWindow.setMinimumSize(QSize(1024, 700))
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
+        self.verticalLayout_5 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setContentsMargins(2, 2, 2, 2)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.select_folder_button = QPushButton(self.centralwidget)
+        self.select_folder_button.setObjectName(u"select_folder_button")
+        font = QFont()
+        font.setPointSize(9)
+        self.select_folder_button.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.select_folder_button)
+
+        self.select_remote_connection_button = QPushButton(self.centralwidget)
+        self.select_remote_connection_button.setObjectName(u"select_remote_connection_button")
+        self.select_remote_connection_button.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.select_remote_connection_button)
+
+        self.reset_view_button = QPushButton(self.centralwidget)
+        self.reset_view_button.setObjectName(u"reset_view_button")
+
+        self.horizontalLayout_4.addWidget(self.reset_view_button)
+
+        self.horizontalSpacer_2 = QSpacerItem(20, 24, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
+
+        self.line_3 = QFrame(self.centralwidget)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setFrameShape(QFrame.VLine)
+        self.line_3.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_4.addWidget(self.line_3)
+
+        self.horizontalSpacer_9 = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_9)
+
+        self.tt_times = QCheckBox(self.centralwidget)
+        self.tt_times.setObjectName(u"tt_times")
+        self.tt_times.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.tt_times)
+
+        self.horizontalSpacer_3 = QSpacerItem(20, 24, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_3)
+
+        self.line_6 = QFrame(self.centralwidget)
+        self.line_6.setObjectName(u"line_6")
+        self.line_6.setFrameShape(QFrame.VLine)
+        self.line_6.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_4.addWidget(self.line_6)
+
+        self.horizontalSpacer_10 = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_10)
+
+        self.zero_phase_check_box = QCheckBox(self.centralwidget)
+        self.zero_phase_check_box.setObjectName(u"zero_phase_check_box")
+        self.zero_phase_check_box.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.zero_phase_check_box)
+
+        self.lowpass_check_box = QCheckBox(self.centralwidget)
+        self.lowpass_check_box.setObjectName(u"lowpass_check_box")
+        self.lowpass_check_box.setEnabled(True)
+        self.lowpass_check_box.setFont(font)
+        self.lowpass_check_box.setChecked(False)
+        self.lowpass_check_box.setTristate(False)
+
+        self.horizontalLayout_4.addWidget(self.lowpass_check_box)
+
+        self.lowpass_period = QDoubleSpinBox(self.centralwidget)
+        self.lowpass_period.setObjectName(u"lowpass_period")
+        self.lowpass_period.setEnabled(False)
+        self.lowpass_period.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.lowpass_period.setDecimals(1)
+        self.lowpass_period.setMinimum(0.000000000000000)
+        self.lowpass_period.setMaximum(1000.000000000000000)
+        self.lowpass_period.setValue(5.000000000000000)
+
+        self.horizontalLayout_4.addWidget(self.lowpass_period)
+
+        self.lowpass_label = QLabel(self.centralwidget)
+        self.lowpass_label.setObjectName(u"lowpass_label")
+        self.lowpass_label.setEnabled(False)
+        self.lowpass_label.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.lowpass_label)
+
+        self.highpass_check_box = QCheckBox(self.centralwidget)
+        self.highpass_check_box.setObjectName(u"highpass_check_box")
+        self.highpass_check_box.setEnabled(True)
+        self.highpass_check_box.setFont(font)
+        self.highpass_check_box.setChecked(False)
+        self.highpass_check_box.setTristate(False)
+
+        self.horizontalLayout_4.addWidget(self.highpass_check_box)
+
+        self.highpass_period = QDoubleSpinBox(self.centralwidget)
+        self.highpass_period.setObjectName(u"highpass_period")
+        self.highpass_period.setEnabled(False)
+        self.highpass_period.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.highpass_period.setDecimals(1)
+        self.highpass_period.setMinimum(0.000000000000000)
+        self.highpass_period.setMaximum(1000.000000000000000)
+        self.highpass_period.setValue(50.000000000000000)
+
+        self.horizontalLayout_4.addWidget(self.highpass_period)
+
+        self.highpass_label = QLabel(self.centralwidget)
+        self.highpass_label.setObjectName(u"highpass_label")
+        self.highpass_label.setEnabled(False)
+        self.highpass_label.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.highpass_label)
+
+        self.horizontalSpacer_5 = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_5)
+
+        self.line_4 = QFrame(self.centralwidget)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFrameShape(QFrame.VLine)
+        self.line_4.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_4.addWidget(self.line_4)
+
+        self.horizontalSpacer = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer)
+
+        self.components_combo = QComboBox(self.centralwidget)
+        self.components_combo.addItem("")
+        self.components_combo.addItem("")
+        self.components_combo.setObjectName(u"components_combo")
+        self.components_combo.setEditable(False)
+        self.components_combo.setDuplicatesEnabled(True)
+
+        self.horizontalLayout_4.addWidget(self.components_combo)
+
+        self.horizontalSpacer_4 = QSpacerItem(20, 24, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_4)
+
+        self.line_5 = QFrame(self.centralwidget)
+        self.line_5.setObjectName(u"line_5")
+        self.line_5.setFrameShape(QFrame.VLine)
+        self.line_5.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_4.addWidget(self.line_5)
+
+        self.horizontalSpacer_6 = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_6)
+
+        self.resample_check_box = QCheckBox(self.centralwidget)
+        self.resample_check_box.setObjectName(u"resample_check_box")
+        self.resample_check_box.setEnabled(True)
+        self.resample_check_box.setFont(font)
+        self.resample_check_box.setChecked(True)
+        self.resample_check_box.setTristate(False)
+
+        self.horizontalLayout_4.addWidget(self.resample_check_box)
+
+        self.resample_factor = QDoubleSpinBox(self.centralwidget)
+        self.resample_factor.setObjectName(u"resample_factor")
+        self.resample_factor.setEnabled(True)
+        self.resample_factor.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.resample_factor.setMinimum(1.000000000000000)
+        self.resample_factor.setValue(5.000000000000000)
+
+        self.horizontalLayout_4.addWidget(self.resample_factor)
+
+        self.sr_ref_label = QLabel(self.centralwidget)
+        self.sr_ref_label.setObjectName(u"sr_ref_label")
+        self.sr_ref_label.setEnabled(True)
+        self.sr_ref_label.setFont(font)
+
+        self.horizontalLayout_4.addWidget(self.sr_ref_label)
+
+
+        self.verticalLayout_5.addLayout(self.horizontalLayout_4)
+
+        self.line = QFrame(self.centralwidget)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_5.addWidget(self.line)
+
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setSpacing(0)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(-1, 1, -1, -1)
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(-1, -1, 10, -1)
+        self.z_graph = PlotWidget(self.centralwidget)
+        self.z_graph.setObjectName(u"z_graph")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.z_graph.sizePolicy().hasHeightForWidth())
+        self.z_graph.setSizePolicy(sizePolicy1)
+        self.z_graph.setMouseTracking(False)
+
+        self.verticalLayout_2.addWidget(self.z_graph)
+
+        self.n_graph = PlotWidget(self.centralwidget)
+        self.n_graph.setObjectName(u"n_graph")
+        sizePolicy1.setHeightForWidth(self.n_graph.sizePolicy().hasHeightForWidth())
+        self.n_graph.setSizePolicy(sizePolicy1)
+
+        self.verticalLayout_2.addWidget(self.n_graph)
+
+        self.e_graph = PlotWidget(self.centralwidget)
+        self.e_graph.setObjectName(u"e_graph")
+        sizePolicy1.setHeightForWidth(self.e_graph.sizePolicy().hasHeightForWidth())
+        self.e_graph.setSizePolicy(sizePolicy1)
+
+        self.verticalLayout_2.addWidget(self.e_graph)
+
+
+        self.horizontalLayout_8.addLayout(self.verticalLayout_2)
+
+        self.line_2 = QFrame(self.centralwidget)
+        self.line_2.setObjectName(u"line_2")
+        self.line_2.setFrameShape(QFrame.VLine)
+        self.line_2.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_8.addWidget(self.line_2)
+
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(1, -1, -1, -1)
+        self.info_text = QTextBrowser(self.centralwidget)
+        self.info_text.setObjectName(u"info_text")
+        self.info_text.setMinimumSize(QSize(470, 100))
+        self.info_text.setMaximumSize(QSize(470, 600))
+        font1 = QFont()
+        font1.setFamily(u"Courier New")
+        font1.setPointSize(10)
+        self.info_text.setFont(font1)
+        self.info_text.setLineWrapMode(QTextEdit.NoWrap)
+        self.info_text.setTabStopWidth(20)
+
+        self.verticalLayout_3.addWidget(self.info_text)
+
+        self.finsource_tab = QTabWidget(self.centralwidget)
+        self.finsource_tab.setObjectName(u"finsource_tab")
+        self.finsource_tab.setMinimumSize(QSize(470, 0))
+        self.finsource_tab.setMaximumSize(QSize(470, 16777215))
+        self.tab_9 = QWidget()
+        self.tab_9.setObjectName(u"tab_9")
+        self.horizontalLayout_5 = QHBoxLayout(self.tab_9)
+        self.horizontalLayout_5.setContentsMargins(2, 2, 2, 2)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.verticalLayout = QVBoxLayout()
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.gridLayout_2 = QGridLayout()
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.label = QLabel(self.tab_9)
+        self.label.setObjectName(u"label")
+        self.label.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label, 1, 0, 1, 1)
+
+        self.source_latitude = QDoubleSpinBox(self.tab_9)
+        self.source_latitude.setObjectName(u"source_latitude")
+        self.source_latitude.setMinimum(-90.000000000000000)
+        self.source_latitude.setMaximum(90.000000000000000)
+
+        self.gridLayout_2.addWidget(self.source_latitude, 1, 1, 1, 1)
+
+        self.source_longitude = QDoubleSpinBox(self.tab_9)
+        self.source_longitude.setObjectName(u"source_longitude")
+        self.source_longitude.setMinimum(-180.000000000000000)
+        self.source_longitude.setMaximum(180.000000000000000)
+
+        self.gridLayout_2.addWidget(self.source_longitude, 1, 3, 1, 1)
+
+        self.label_2 = QLabel(self.tab_9)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_2, 1, 2, 1, 1)
+
+
+        self.horizontalLayout_3.addLayout(self.gridLayout_2)
+
+        self.depth_label = QLabel(self.tab_9)
+        self.depth_label.setObjectName(u"depth_label")
+        self.depth_label.setMinimumSize(QSize(120, 0))
+        self.depth_label.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_3.addWidget(self.depth_label)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.mt_fig = Qt4MplCanvas(self.tab_9)
+        self.mt_fig.setObjectName(u"mt_fig")
+        self.mt_fig.setMinimumSize(QSize(60, 60))
+        self.mt_fig.setMaximumSize(QSize(60, 60))
+
+        self.horizontalLayout.addWidget(self.mt_fig)
+
+        self.source_tab = QTabWidget(self.tab_9)
+        self.source_tab.setObjectName(u"source_tab")
+        self.tab = QWidget()
+        self.tab.setObjectName(u"tab")
+        self.gridLayout = QGridLayout(self.tab)
+        self.gridLayout.setContentsMargins(2, 2, 2, 2)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.load_source_button = QPushButton(self.tab)
+        self.load_source_button.setObjectName(u"load_source_button")
+
+        self.gridLayout.addWidget(self.load_source_button, 4, 1, 1, 1)
+
+        self.m_rp = ScientificDoubleSpinBox(self.tab)
+        self.m_rp.setObjectName(u"m_rp")
+
+        self.gridLayout.addWidget(self.m_rp, 1, 3, 1, 1)
+
+        self.m_rr = ScientificDoubleSpinBox(self.tab)
+        self.m_rr.setObjectName(u"m_rr")
+
+        self.gridLayout.addWidget(self.m_rr, 1, 1, 1, 1)
+
+        self.m_rt = ScientificDoubleSpinBox(self.tab)
+        self.m_rt.setObjectName(u"m_rt")
+
+        self.gridLayout.addWidget(self.m_rt, 1, 2, 1, 1)
+
+        self.label_9 = QLabel(self.tab)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_9, 0, 3, 1, 1)
+
+        self.label_6 = QLabel(self.tab)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_6, 0, 2, 1, 1)
+
+        self.label_5 = QLabel(self.tab)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_5, 0, 1, 1, 1)
+
+        self.m_tt = ScientificDoubleSpinBox(self.tab)
+        self.m_tt.setObjectName(u"m_tt")
+
+        self.gridLayout.addWidget(self.m_tt, 3, 2, 1, 1)
+
+        self.m_tp = ScientificDoubleSpinBox(self.tab)
+        self.m_tp.setObjectName(u"m_tp")
+
+        self.gridLayout.addWidget(self.m_tp, 3, 3, 1, 1)
+
+        self.m_pp = ScientificDoubleSpinBox(self.tab)
+        self.m_pp.setObjectName(u"m_pp")
+
+        self.gridLayout.addWidget(self.m_pp, 4, 3, 1, 1)
+
+        self.label_7 = QLabel(self.tab)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_7, 3, 4, 1, 1)
+
+        self.label_8 = QLabel(self.tab)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_8, 4, 4, 1, 1)
+
+        self.label_4 = QLabel(self.tab)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setEnabled(True)
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_4, 1, 4, 1, 1)
+
+        self.gridLayout.setColumnStretch(1, 10)
+        self.gridLayout.setColumnStretch(2, 10)
+        self.gridLayout.setColumnStretch(3, 10)
+        self.source_tab.addTab(self.tab, "")
+        self.tab_2 = QWidget()
+        self.tab_2.setObjectName(u"tab_2")
+        self.gridLayout_4 = QGridLayout(self.tab_2)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.strike_value = QLabel(self.tab_2)
+        self.strike_value.setObjectName(u"strike_value")
+        self.strike_value.setMinimumSize(QSize(30, 0))
+        self.strike_value.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_4.addWidget(self.strike_value, 0, 2, 1, 1)
+
+        self.label_10 = QLabel(self.tab_2)
+        self.label_10.setObjectName(u"label_10")
+
+        self.gridLayout_4.addWidget(self.label_10, 1, 0, 1, 1)
+
+        self.label_3 = QLabel(self.tab_2)
+        self.label_3.setObjectName(u"label_3")
+
+        self.gridLayout_4.addWidget(self.label_3, 0, 0, 1, 1)
+
+        self.dip_slider = QSlider(self.tab_2)
+        self.dip_slider.setObjectName(u"dip_slider")
+        self.dip_slider.setMaximum(90)
+        self.dip_slider.setValue(90)
+        self.dip_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_4.addWidget(self.dip_slider, 1, 1, 1, 1)
+
+        self.dip_value = QLabel(self.tab_2)
+        self.dip_value.setObjectName(u"dip_value")
+        self.dip_value.setMinimumSize(QSize(30, 0))
+        self.dip_value.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_4.addWidget(self.dip_value, 1, 2, 1, 1)
+
+        self.label_13 = QLabel(self.tab_2)
+        self.label_13.setObjectName(u"label_13")
+
+        self.gridLayout_4.addWidget(self.label_13, 2, 0, 1, 1)
+
+        self.rake_slider = QSlider(self.tab_2)
+        self.rake_slider.setObjectName(u"rake_slider")
+        self.rake_slider.setMinimum(-180)
+        self.rake_slider.setMaximum(180)
+        self.rake_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_4.addWidget(self.rake_slider, 2, 1, 1, 1)
+
+        self.rake_value = QLabel(self.tab_2)
+        self.rake_value.setObjectName(u"rake_value")
+        self.rake_value.setMinimumSize(QSize(30, 0))
+        self.rake_value.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.gridLayout_4.addWidget(self.rake_value, 2, 2, 1, 1)
+
+        self.strike_slider = QSlider(self.tab_2)
+        self.strike_slider.setObjectName(u"strike_slider")
+        self.strike_slider.setMaximum(360)
+        self.strike_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_4.addWidget(self.strike_slider, 0, 1, 1, 1)
+
+        self.source_tab.addTab(self.tab_2, "")
+
+        self.horizontalLayout.addWidget(self.source_tab)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout)
+
+
+        self.horizontalLayout_5.addLayout(self.verticalLayout)
+
+        self.depth_slider = QSlider(self.tab_9)
+        self.depth_slider.setObjectName(u"depth_slider")
+        self.depth_slider.setMinimum(-300)
+        self.depth_slider.setMaximum(0)
+        self.depth_slider.setValue(-10)
+        self.depth_slider.setSliderPosition(-10)
+        self.depth_slider.setOrientation(Qt.Vertical)
+        self.depth_slider.setTickPosition(QSlider.NoTicks)
+
+        self.horizontalLayout_5.addWidget(self.depth_slider)
+
+        self.finsource_tab.addTab(self.tab_9, "")
+        self.depth_slider.raise_()
+        self.tab_10 = QWidget()
+        self.tab_10.setObjectName(u"tab_10")
+        self.gridLayout_3 = QGridLayout(self.tab_10)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.verticalLayout_4 = QVBoxLayout()
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.open_srf_file_button = QPushButton(self.tab_10)
+        self.open_srf_file_button.setObjectName(u"open_srf_file_button")
+
+        self.verticalLayout_4.addWidget(self.open_srf_file_button)
+
+        self.update_button = QPushButton(self.tab_10)
+        self.update_button.setObjectName(u"update_button")
+
+        self.verticalLayout_4.addWidget(self.update_button)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.auto_update_check_box = QCheckBox(self.tab_10)
+        self.auto_update_check_box.setObjectName(u"auto_update_check_box")
+        self.auto_update_check_box.setEnabled(True)
+
+        self.horizontalLayout_2.addWidget(self.auto_update_check_box)
+
+        self.plot_CMT_check_box = QCheckBox(self.tab_10)
+        self.plot_CMT_check_box.setObjectName(u"plot_CMT_check_box")
+        self.plot_CMT_check_box.setEnabled(True)
+        self.plot_CMT_check_box.setChecked(True)
+
+        self.horizontalLayout_2.addWidget(self.plot_CMT_check_box)
+
+
+        self.verticalLayout_4.addLayout(self.horizontalLayout_2)
+
+
+        self.gridLayout_3.addLayout(self.verticalLayout_4, 0, 2, 1, 1)
+
+        self.cmt_sliprate = Qt4MplCanvas(self.tab_10)
+        self.cmt_sliprate.setObjectName(u"cmt_sliprate")
+        self.cmt_sliprate.setMinimumSize(QSize(0, 0))
+        self.cmt_sliprate.setMaximumSize(QSize(5000, 5000))
+
+        self.gridLayout_3.addWidget(self.cmt_sliprate, 1, 2, 1, 1)
+
+        self.mt_fig_finite = Qt4MplCanvas(self.tab_10)
+        self.mt_fig_finite.setObjectName(u"mt_fig_finite")
+        self.mt_fig_finite.setMinimumSize(QSize(60, 60))
+        self.mt_fig_finite.setMaximumSize(QSize(60, 60))
+
+        self.gridLayout_3.addWidget(self.mt_fig_finite, 1, 1, 1, 1)
+
+        self.finsource_tab.addTab(self.tab_10, "")
+
+        self.verticalLayout_3.addWidget(self.finsource_tab)
+
+        self.map_fig = Qt4MplCanvas(self.centralwidget)
+        self.map_fig.setObjectName(u"map_fig")
+        self.map_fig.setMinimumSize(QSize(150, 100))
+        self.map_fig.setMaximumSize(QSize(470, 280))
+
+        self.verticalLayout_3.addWidget(self.map_fig)
+
+        self.groupBox_2 = QGroupBox(self.centralwidget)
+        self.groupBox_2.setObjectName(u"groupBox_2")
+        self.horizontalLayout_7 = QHBoxLayout(self.groupBox_2)
+        self.horizontalLayout_7.setContentsMargins(2, 2, 2, 2)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.label_11 = QLabel(self.groupBox_2)
+        self.label_11.setObjectName(u"label_11")
+
+        self.horizontalLayout_7.addWidget(self.label_11)
+
+        self.receiver_latitude = QDoubleSpinBox(self.groupBox_2)
+        self.receiver_latitude.setObjectName(u"receiver_latitude")
+        self.receiver_latitude.setMinimum(-90.000000000000000)
+        self.receiver_latitude.setMaximum(90.000000000000000)
+        self.receiver_latitude.setValue(45.000000000000000)
+
+        self.horizontalLayout_7.addWidget(self.receiver_latitude)
+
+        self.label_12 = QLabel(self.groupBox_2)
+        self.label_12.setObjectName(u"label_12")
+
+        self.horizontalLayout_7.addWidget(self.label_12)
+
+        self.receiver_longitude = QDoubleSpinBox(self.groupBox_2)
+        self.receiver_longitude.setObjectName(u"receiver_longitude")
+        self.receiver_longitude.setMinimum(-180.000000000000000)
+        self.receiver_longitude.setMaximum(180.000000000000000)
+        self.receiver_longitude.setValue(45.000000000000000)
+
+        self.horizontalLayout_7.addWidget(self.receiver_longitude)
+
+        self.stations_combo = QComboBox(self.groupBox_2)
+        self.stations_combo.setObjectName(u"stations_combo")
+
+        self.horizontalLayout_7.addWidget(self.stations_combo)
+
+        self.load_stations_button = QPushButton(self.groupBox_2)
+        self.load_stations_button.setObjectName(u"load_stations_button")
+
+        self.horizontalLayout_7.addWidget(self.load_stations_button)
+
+
+        self.verticalLayout_3.addWidget(self.groupBox_2)
+
+        self.verticalLayout_3.setStretch(0, 10)
+        self.verticalLayout_3.setStretch(1, 1)
+        self.verticalLayout_3.setStretch(2, 20)
+        self.verticalLayout_3.setStretch(3, 1)
+
+        self.horizontalLayout_8.addLayout(self.verticalLayout_3)
+
+        self.horizontalLayout_8.setStretch(0, 10)
+
+        self.verticalLayout_5.addLayout(self.horizontalLayout_8)
+
+        self.verticalLayout_5.setStretch(0, 1)
+        self.verticalLayout_5.setStretch(1, 1)
+        self.verticalLayout_5.setStretch(2, 100)
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+
+        self.components_combo.setCurrentIndex(1)
+        self.finsource_tab.setCurrentIndex(0)
+        self.source_tab.setCurrentIndex(0)
+
+
+        QMetaObject.connectSlotsByName(MainWindow)
+    # setupUi
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Instaseis GUI", None))
+        self.select_folder_button.setText(QCoreApplication.translate("MainWindow", u"Open DB", None))
+        self.select_remote_connection_button.setText(QCoreApplication.translate("MainWindow", u"Open Remote DB", None))
+        self.reset_view_button.setText(QCoreApplication.translate("MainWindow", u"Reset View (R)", None))
+#if QT_CONFIG(shortcut)
+        self.reset_view_button.setShortcut(QCoreApplication.translate("MainWindow", u"R", None))
+#endif // QT_CONFIG(shortcut)
+        self.tt_times.setText(QCoreApplication.translate("MainWindow", u"Plot TauP Times (AK135)", None))
+        self.zero_phase_check_box.setText(QCoreApplication.translate("MainWindow", u"Zero Phase", None))
+        self.lowpass_check_box.setText(QCoreApplication.translate("MainWindow", u"Lowpass", None))
+        self.lowpass_label.setText(QCoreApplication.translate("MainWindow", u"s", None))
+        self.highpass_check_box.setText(QCoreApplication.translate("MainWindow", u"Highpass", None))
+        self.highpass_label.setText(QCoreApplication.translate("MainWindow", u"s", None))
+        self.components_combo.setItemText(0, QCoreApplication.translate("MainWindow", u"ZNE", None))
+        self.components_combo.setItemText(1, QCoreApplication.translate("MainWindow", u"ZRT", None))
+
+        self.resample_check_box.setText(QCoreApplication.translate("MainWindow", u"Resample", None))
+        self.sr_ref_label.setText(QCoreApplication.translate("MainWindow", u"x sampling rate", None))
+#if QT_CONFIG(tooltip)
+        self.z_graph.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.n_graph.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Latitude", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Longitude", None))
+        self.depth_label.setText(QCoreApplication.translate("MainWindow", u"Depth: 10 km", None))
+        self.load_source_button.setText(QCoreApplication.translate("MainWindow", u"load", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"p", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"t", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"r", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"t", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"p", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"r", None))
+        self.source_tab.setTabText(self.source_tab.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Moment Tensor", None))
+        self.strike_value.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Dip", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Strike", None))
+        self.dip_value.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Rake", None))
+        self.rake_value.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.source_tab.setTabText(self.source_tab.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Strike Dip Rake", None))
+        self.finsource_tab.setTabText(self.finsource_tab.indexOf(self.tab_9), QCoreApplication.translate("MainWindow", u"Point Source", None))
+        self.open_srf_file_button.setText(QCoreApplication.translate("MainWindow", u"open finite source from file (*.srf, *.param)", None))
+        self.update_button.setText(QCoreApplication.translate("MainWindow", u"update seismograms (U)", None))
+#if QT_CONFIG(shortcut)
+        self.update_button.setShortcut(QCoreApplication.translate("MainWindow", u"U", None))
+#endif // QT_CONFIG(shortcut)
+        self.auto_update_check_box.setText(QCoreApplication.translate("MainWindow", u"auto update", None))
+        self.plot_CMT_check_box.setText(QCoreApplication.translate("MainWindow", u"plot CMT seismograms", None))
+        self.finsource_tab.setTabText(self.finsource_tab.indexOf(self.tab_10), QCoreApplication.translate("MainWindow", u"Finite Source", None))
+        self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Receiver", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Latitude", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Longitude", None))
+        self.load_stations_button.setText(QCoreApplication.translate("MainWindow", u"load", None))
+    # retranslateUi
+

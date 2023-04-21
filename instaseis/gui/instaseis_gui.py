@@ -11,6 +11,8 @@ Graphical user interface for Instaseis.
 """
 from PySide2 import QtGui, QtCore
 from PySide2.QtWidgets import QApplication
+from PySide2 import QtWidgets
+from PySide2.QtWidgets import QMainWindow
 import pyqtgraph as pg
 
 from glob import iglob
@@ -82,9 +84,9 @@ def compile_and_import_ui_files():
             print(e.message)
 
 
-class Window(QtGui.QMainWindow):
+class Window(QMainWindow):
     def __init__(self):
-        QtGui.QMainWindow.__init__(self)
+        QMainWindow.__init__(self)
         # Injected by the compile_and_import_ui_files() function.
         self.ui = qt_window.Ui_MainWindow()  # NOQA
         self.ui.setupUi(self)
@@ -468,7 +470,8 @@ class Window(QtGui.QMainWindow):
             ):
                 st = self.st_copy.copy()
             else:
-                prog_diag = QtGui.QProgressDialog(
+                #prog_diag = QtGui.QProgressDialog(
+                prog_diag = QtWidgets.QProgressDialog(
                     "Calculating", "Cancel", 0, len(self.finite_source), self
                 )
                 prog_diag.setWindowModality(QtCore.Qt.WindowModal)
@@ -585,7 +588,8 @@ class Window(QtGui.QMainWindow):
     def on_select_folder_button_released(self):
         pwd = os.getcwd()
         self.folder = str(
-            QtGui.QFileDialog.getExistingDirectory(
+            #QtGui.QFileDialog.getExistingDirectory(
+            QtWidgets.QFileDialog.getExistingDirectory(
                 self, "Choose Directory", pwd
             )
         )
@@ -607,7 +611,8 @@ class Window(QtGui.QMainWindow):
 
     @QtCore.Slot()
     def on_select_remote_connection_button_released(self):
-        text, ok = QtGui.QInputDialog.getText(
+        #text, ok = QtGui.QInputDialog.getText(
+        text, ok = QtWidgets.QInputDialog.getText(
             self,
             "Remote Instaseis Connection",
             "Enter URL to remote Instaseis Server:",
@@ -634,7 +639,8 @@ class Window(QtGui.QMainWindow):
     def on_open_srf_file_button_released(self):
         pwd = os.getcwd()
         self.finite_src_file = str(
-            QtGui.QFileDialog.getOpenFileName(
+            #QtGui.QFileDialog.getOpenFileName(
+            QtWidgets.QFileDialog.getOpenFileName(
                 self,
                 "Choose *.srf or *.param File",
                 pwd,
@@ -707,7 +713,8 @@ class Window(QtGui.QMainWindow):
     def on_load_source_button_released(self):
         pwd = os.getcwd()
         self.source_file = str(
-            QtGui.QFileDialog.getOpenFileName(self, "Choose Source File", pwd)
+            #QtGui.QFileDialog.getOpenFileName(self, "Choose Source File", pwd)
+            QtWidgets.QFileDialog.getOpenFileName(self, "Choose Source File", pwd)
         )
         if not self.source_file:
             return
@@ -871,7 +878,8 @@ class Window(QtGui.QMainWindow):
     def on_load_stations_button_released(self):
         pwd = os.getcwd()
         self.stations_file = str(
-            QtGui.QFileDialog.getOpenFileName(
+            #QtGui.QFileDialog.getOpenFileName(
+            QtWidgets.QFileDialog.getOpenFileName(
                 self, "Choose Stations File", pwd
             )
         )
@@ -922,7 +930,7 @@ class Window(QtGui.QMainWindow):
                 self.ui.n_graph.setToolTip(tooltipstr)
                 self.ui.e_graph.setToolTip(tooltipstr)
 
-        return QtGui.QMainWindow.eventFilter(self, source, event)
+        return QMainWindow.eventFilter(self, source, event)
 
 
 def launch():

@@ -50,6 +50,9 @@ from version import get_git_version  # noqa
 # Monkey patch the compilers to treat Fortran files like C files.
 CCompiler.language_map[".f90"] = "c"
 UnixCCompiler.src_extensions.append(".f90")
+print('#########################################')
+print(UnixCCompiler.src_extensions)
+print('#########################################')
 
 DOCSTRING = __doc__.strip().split("\n")
 
@@ -181,7 +184,8 @@ if sys.version_info[0] == 2:
 
 setup_config = dict(
     name="instaseis",
-    version=get_git_version(),
+    #version=get_git_version(),
+    version='1.4.2',
     description=DOCSTRING[0],
     long_description="\n".join(DOCSTRING[2:]),
     author="Lion Krischer, Martin van Driel, and Simon Stähler",
@@ -218,6 +222,9 @@ setup_config = dict(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: Implementation :: CPython",
         "Topic :: Scientific/Engineering",
         "Topic :: Scientific/Engineering :: Physics",
